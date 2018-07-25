@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+
+  <script>
+    var totalSteps = 5;
+    var currentStep = 0;
+    var stepDelay = 1000;
+    var count = 0;
+    var timerHandle;
+
+    function startTimer() {
+      timerHandle = setInterval(function() {
+        console.log(currentStep);
+
+        if (currentStep === totalSteps) {
+          currentStep = 0;
+        } else {
+          currentStep++;
+        }
+      }, stepDelay);
+    }
+
+    function stopTimer() {
+      clearInterval(timerHandle);
+    }
+
+  </script>
+
+</head>
+
+<body>
+  <button type="button" onclick="startTimer()">START</button>
+  <button type="button" onclick="stopTimer()">STOP</button>
+</body>
+
+</html>

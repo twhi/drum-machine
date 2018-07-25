@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="content">
+
+    <div class="settings">
+
+    <p>Settings: </p>
+      <div class="input-items">
+        <table class="settings-table">
+        <tr>
+          <td>
+            <div class="input-element"><span>Number of columns: </span><input type="text" id="cols" value="16"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="input-element"><span>BPM: </span><input type="text" id="bpm" value="120"></div>
+          </td>
+        </tr>
+        </table>
+      </div>
+
+      <div class="radio-buttons">
+        <p>Notes:</p>
+        <form>
+          <label class="radio-inline">
+            <input type="radio" name="notes" value="4" checked="checked">Quarter
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="notes" value="8">Eighth
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="notes" value="16">Sixteenth
+          </label>
+        </form>
+      </div>
+
+
+      <div class "buttons">
+        <button id="generate-grid">Generate grid</button>
+        <button id="play">Play</button>
+        <button id="stop">Stop</button>
+        <button id="clear">Clear all</button>
+      </div>
+
+    </div>
+
+  <div class="container"> </div>
+
+  <div class="audio-files">
+    <!-- <audio src="sounds/clap.wav"></audio>
+    <audio src="sounds/hihat.wav"></audio>
+    <audio src="sounds/kick.wav"></audio>
+    <audio src="sounds/openhat.wav"></audio>
+    <audio src="sounds/boom.wav"></audio>
+    <audio src="sounds/ride.wav"></audio>
+    <audio src="sounds/snare.wav"></audio>
+    <audio src="sounds/tom.wav"></audio>
+    <audio src="sounds/tink.wav"></audio> -->
+
+    <audio src="808/Bass drum.WAV"></audio>
+    <audio src="808/Clap.WAV"></audio>
+    <audio src="808/Clave.WAV"></audio>
+    <audio src="808/Closed hi-hat.WAV"></audio>
+    <audio src="808/Cowbell.WAV"></audio>
+    <audio src="808/Hi conga.WAV"></audio>
+    <audio src="808/Hi tom.WAV"></audio>
+    <audio src="808/Low conga.WAV"></audio>
+    <audio src="808/Low tom.WAV"></audio>
+    <audio src="808/Maraca.WAV"></audio>
+    <audio src="808/Mid conga.WAV"></audio>
+    <audio src="808/Mid tom.WAV"></audio>
+    <audio src="808/Open hi-hat.WAV"></audio>
+    <audio src="808/Ride.WAV"></audio>
+    <audio src="808/Rim.WAV"></audio>
+    <audio src="808/Snare.WAV"></audio>
+  </div>
+  </div>
+
+</body>
+
+<script src="Grid.js"></script>
+<script src="Player.js"></script>
+
+</html>

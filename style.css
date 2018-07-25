@@ -1,0 +1,102 @@
+html {
+  font-size: 10px;
+  padding: 10px;
+    background-color: #252436;
+  /* background-color: black; */
+  /* color: grey; */
+}
+
+body,html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.settings {
+  background-color: grey;
+  padding: 10px;
+  width: 50%;
+  font-size: 12px;
+}
+
+.settings-table {
+  table-layout:auto;
+}
+
+/* .keys {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+} */
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
+}
+
+/* format of the grid */
+.grid {
+    margin:1em auto;
+    border-collapse:collapse;
+    float: left;
+    color: white;
+    /* background-color: #92C3C9; */
+}
+
+/* format of each individual cell */
+.grid td {
+    cursor:pointer;
+    width:30px;
+    height:30px;
+    border:1px
+    solid #ccc;
+    text-align:center;
+    font-family:sans-serif;
+    font-size:13px;
+}
+
+/* format of grid titles */
+.grid td.title {
+    /* background-color: #92C3C9; */
+    width: 1px;
+    white-space: nowrap;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* for cells that are playing but not clicked */
+.grid td.playing {
+    background-color: #94C2C7;
+    font-weight:bold;
+}
+
+/* for cells that have been clicked but not playing  */
+.grid td.clicked {
+    background-color: #3792A8;
+}
+
+/* for cells that have been clicked and are playing */
+.grid td.clicked.playing {
+  /* background-color: green; */
+  border-color: red;
+  box-shadow: 0 0 1rem red;
+}
+
+.input-box {
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.content {
+  padding: 10px;
+
+}
