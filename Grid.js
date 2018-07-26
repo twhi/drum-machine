@@ -1,7 +1,6 @@
 var Grid = (function() {
 
   var getDimensions = function() {
-    // var rowNum = document.querySelector('#rows').value;
     var rowNum = document.querySelectorAll('audio').length;
     var colNum = document.querySelector('#cols').value;
     return {
@@ -27,16 +26,6 @@ var Grid = (function() {
     } else if (el.className == 'playing') {
       el.className = 'clicked playing';
     }
-
-
-
-    // if (cell.className.indexOf("clicked") !== -1) {
-    //   cell.className = "clicked"; // if the cell has been clicked then revert back to a class of just clicked
-    // } else {
-    //   if (cell.className != 'title') {
-    //     cell.className = ""; // if the cell is unclicked them remove the playing class
-    //   }
-    // }
   }
 
   var generateGrid = function(rows, cols, eventFunction) {
@@ -48,7 +37,6 @@ var Grid = (function() {
       var tr = grid.appendChild(document.createElement('tr'));
       for (var c = 0; c < cols; ++c) {
         var cell = tr.appendChild(document.createElement('td'));
-        //cell.innerHTML = ++i;
         cell.className = '';
         cell.addEventListener('mousedown', (function(el) {
           return function() {
@@ -65,12 +53,11 @@ var Grid = (function() {
   };
 
   var addTitles = function(getAudio) {
-    var grid = document.querySelectorAll('tr'); // get all row elements
+    var grid = document.querySelector('.grid').children;
     for (var i = 0; i < grid.length; i++) {
       var newRowTitle = grid[i].insertCell(0); // insert a new cell at the first position of the row
       newRowTitle.innerHTML = decodeURIComponent(getAudio[i].src.replace(/^.*[\\\/]/, '').slice(0, -4)); // potentially file inputs
       newRowTitle.className = "title";
-      // newRowTitle.style.width = '100px'; // manually set width of table element
     }
   };
 
@@ -106,6 +93,5 @@ var Grid = (function() {
     init: createMusicGrid,
     clear: clearClasses
   };
-
 
 })();

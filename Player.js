@@ -10,12 +10,8 @@ var Player = (function() {
   var totalSteps;
   var bpm;
 
-
   var getBPM = function() {
-    //get bpm
     bpm = document.querySelector('#bpm').value;
-
-    // get notes to be played
     noteRadioButtons = document.getElementsByName('notes');
     var notes;
     noteRadioButtons.forEach(function(e) {
@@ -30,29 +26,14 @@ var Player = (function() {
     return tickTime;
   }
 
-  var initialisePlayer = function() {
-    if (!timerHandle) {
-      var tickerTime = getBPM();
-      startLoop(tickerTime);
-    }
-  }
-
   var startLoop = function(tickerTime) {
-    rows = document.querySelectorAll('tr');
+    rows = document.querySelector('.grid').children;
     totalSteps = rows[0].childNodes.length - 1;
     var currentStep = 1;
     timerHandle = setInterval(function() {
       playColumn(currentStep, totalSteps);
       (currentStep === totalSteps) ? currentStep = 1: currentStep++;
     }, tickerTime);
-  }
-
-  var stopMusic = function() {
-    clearInterval(timerHandle);
-    applyClassesStop();
-    firstPlay = true;
-    timerHandle = null;
-    adjacentCell = null;
   }
 
   var applyClassesStop = function() {
@@ -100,6 +81,21 @@ var Player = (function() {
     let audio = document.createElement("audio"); // create new audio element
     audio.src = sound; // define audio source
     audio.play(); // play new audio
+  }
+
+  var initialisePlayer = function() {
+    if (!timerHandle) {
+      var tickerTime = getBPM();
+      startLoop(tickerTime);
+    }
+  }
+
+  var stopMusic = function() {
+    clearInterval(timerHandle);
+    applyClassesStop();
+    firstPlay = true;
+    timerHandle = null;
+    adjacentCell = null;
   }
 
   return {
